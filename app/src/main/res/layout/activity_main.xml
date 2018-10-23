@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="bupt.astroleander.sodraggable.utils.Converters" />
+        <variable name="rgb" type="bupt.astroleander.sodraggable.RGBViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <!--write string directly (DO NOT RECOMMEND)-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:text="R! G! B!" />
+
+
+        <!--using style to change color-->
+        <SeekBar
+            android:id="@+id/seel_bar_red"
+            style="@style/customarySeekBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:max="@string/rgb_max"
+            android:progressDrawable="@drawable/seek_bar_sample_progress"
+            android:thumb="@drawable/seek_bar_sample_thumb" />
+
+        <!--using xml layout code to change color-->
+        <SeekBar
+            android:id="@+id/seek_bar_g"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:max="@string/rgb_max"
+            android:minHeight="8dp"
+            android:progressDrawable="@drawable/seek_bar_sample_progress"
+            android:progressTint="@color/green"
+            android:secondaryProgressTint="@color/colorAccent"
+            android:thumb="@drawable/seek_bar_sample_thumb"
+            android:thumbTint="@color/green"
+            android:tickMarkTint="@color/red" />
+
+        <!--using drawable's default color-->
+        <SeekBar
+            android:id="@+id/seek_bar_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:max="@string/rgb_max"
+            android:progressDrawable="@drawable/seek_bar_sample_progress"
+            android:thumb="@drawable/seek_bar_sample_thumb" />
+
+        <!--with out any extra settings, seek bar looks like...-->
+        <SeekBar
+            android:id="@+id/seekBarOrigin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:max="@string/rgb_max" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textSize="24sp"
+                android:text="@={Converters.convertToString(rgb.red)}" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:text="@={Converters.convertToString(rgb.green)}" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textSize="24sp"
+                android:text="@={Converters.convertToString(rgb.blue)}" />
+        </LinearLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+</layout>
