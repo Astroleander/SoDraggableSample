@@ -6,7 +6,7 @@ An Android Sample Including Data Binding and Recycler View
 你可以点击 [`release`](https://github.com/Astroleander/SoDraggableSample/releases) 下载 apk。
 
 # Notes
-本项目使用了  'com.android.support:recyclerview-v7`  `com.android.support:design` 和 `com.android.support.constraint:constraint-layout`包，
+本项目使用了  `com.android.support:recyclerview-v7`  `com.android.support:design` 和 `com.android.support.constraint:constraint-layout`包，
 这些包通过 app 下的 `build.gradle` 文件中。
 
 # Sync
