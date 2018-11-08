@@ -6,6 +6,7 @@ An Android Sample Including Data Binding and Recycler View
 + 包括一个继承自 Observable 的 Viewmodel。
 + 包括常用的多种监听器的写法。
 + 包括 RecycleView 与其附属组件，并使用一个示例来展示。
++ 包括使用 Intent 与 Bundle 进行应用活动间消息传递的例子。
 + 不包括 Kotlin 技术
 
 # 使用和下载
@@ -25,6 +26,8 @@ API SDK > 23 (Android 6.0)
 
 Build Tools 28.0.3
 
+更新到了 TARGET SDK 28 与 Gradle 4.6 以更方便运行。
+
 # 其它
 如果在你的电脑上本项目不能运行，推荐在使用搜索引擎排除后在本项目的 issue 留言，并尽量完整地贴出错误信息。
 
@@ -32,12 +35,16 @@ Build Tools 28.0.3
 
 有什么意见可以在 [issue](https://github.com/Astroleander/SoDraggableSample/issues) 中提出。我非常期待你们的意见和留言(和Star)。
 
-# Notes
-本项目使用了  `com.android.support:recyclerview-v7`  `com.android.support:design` 和 `com.android.support.constraint:constraint-layout`包，
-这些包通过 app 下的 `build.gradle` 文件中。
+常见的 Failed Resolve 错误等几乎都由 Gradle 更新失败造成， 你可以手动下载 [Gradle 4.6](https://gradle.org/releases/) 版本并放到 `%你的用户目录%\.gradle\wrapper\dists\` 下。通常不会出现 SDK 本身下载不下来的情况。
+
+另外请尽量在网络环境较好的地方尝试下载和(第一次)运行项目
 
 # Sync
-打不开项目或者提示 Sync failed 几乎都是下载和同步的问题，请尝试在 File > Settings > Proxy (通过搜索栏) > 设置代理，如果有自己的代理设置为 127.0.0.1 和对应的端口，如果没有的话请搜索「 Android Studio 代理镜像」进行配置。配置完成后可以点击 Proxy 界面下方的 Test Connection ， 输入墙外网址查看是否成功。
+~~打不开项目或者提示 Sync failed 几乎都是下载和同步的问题，请尝试在 File > Settings > Proxy (通过搜索栏) > 设置代理，如果有自己的代理设置为 127.0.0.1 和对应的端口，如果没有的话请搜索「 Android Studio 代理镜像」进行配置。配置完成后可以点击 Proxy 界面下方的 Test Connection ， 输入墙外网址查看是否成功。~~
+
+# Notes
+本项目使用了  `com.android.support:recyclerview-v7`  `com.android.support:design` 和 `com.android.support.constraint:constraint-layout`包，
+这些包的依赖路径包含在 app 下的 `build.gradle` 文件中。
 
 # 更新与贡献
 如果你对这个项目有兴趣并且打算对其进行改进欢迎提交新的 pr，或者 fork 它以创建你自己的分支。
